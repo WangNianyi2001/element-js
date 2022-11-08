@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"outDir": "build",
+		"target": "ESNext",
+		"lib": ["ESNext", "DOM"],
+		"strictNullChecks": true,
+		"declaration": true
+	}
+}
