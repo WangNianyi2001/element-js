@@ -32,6 +32,7 @@ export declare function Modify<Type extends HTMLElement>($element: Type, options
 export declare function Find<Type extends HTMLElement = HTMLElement>(selector: string, options?: ElementOptions<Type>, parent?: HTMLElement | Document): Type | null;
 /** Create element of tag with custom properties. */
 export declare function Create<K extends keyof HTMLElementTagNameMap>(tag: K, options?: ElementOptions<HTMLElementTagNameMap[K]>): HTMLElementTagNameMap[K];
+export declare function Create(tag: string, options: ElementOptions<HTMLElement>): HTMLElement;
 /** Clear all children of element. */
 export declare function Clear(element: Node): void;
 /** Remove element from its parent. */

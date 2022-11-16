@@ -55,7 +55,6 @@ export function Find(selector, options, parent = document) {
         Modify($element, options);
     return $element;
 }
-/** Create element of tag with custom properties. */
 export function Create(tag, options) {
     const $element = document.createElement(tag);
     if (options)

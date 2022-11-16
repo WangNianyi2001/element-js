@@ -95,10 +95,14 @@ export function Find<Type extends HTMLElement = HTMLElement>(
 }
 
 /** Create element of tag with custom properties. */
-export function Create(tag: string, options: ElementOptions<HTMLElement>): HTMLElement;
 export function Create<K extends keyof HTMLElementTagNameMap>(
 	tag: K, options?: ElementOptions<HTMLElementTagNameMap[K]>
-): HTMLElementTagNameMap[K] {
+): HTMLElementTagNameMap[K];
+export function Create(tag: string, options: ElementOptions<HTMLElement>): HTMLElement;
+export function Create<K extends keyof HTMLElementTagNameMap>(
+	tag: K | string,
+	options?: ElementOptions<HTMLElementTagNameMap[K]> | ElementOptions<HTMLElement>
+): HTMLElementTagNameMap[K] | HTMLElement {
 	const $element = document.createElement(tag);
 	if(options)
 		Modify($element, options);
