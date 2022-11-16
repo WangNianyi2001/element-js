@@ -95,6 +95,7 @@ export function Find<Type extends HTMLElement = HTMLElement>(
 }
 
 /** Create element of tag with custom properties. */
+export function Create(tag: string, options: ElementOptions<HTMLElement>): HTMLElement;
 export function Create<K extends keyof HTMLElementTagNameMap>(
 	tag: K, options?: ElementOptions<HTMLElementTagNameMap[K]>
 ): HTMLElementTagNameMap[K] {
