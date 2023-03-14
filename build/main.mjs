@@ -1,3 +1,4 @@
+import * as Legacy from './legacy.mjs';
 /** Modify element regarding custom options. */
 export function Modify($element, options) {
     if (options.id)
@@ -30,11 +31,11 @@ export function Modify($element, options) {
     }
     if (options.on) {
         for (const type in options.on)
-            $element.addEventListener(type, options.on[type]);
+            Legacy.addEventListener.call($element, type, options.on[type]);
     }
     if (options.once) {
         for (const type in options.once)
-            $element.addEventListener(type, options.once[type]);
+            Legacy.addEventListener.call($element, type, options.once[type], { once: true });
     }
     if (options.styles) {
         for (const [property, value] of Object.entries(options.styles))
