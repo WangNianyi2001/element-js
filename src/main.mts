@@ -1,4 +1,5 @@
 import * as Legacy from './legacy.mjs';
+export * as Legacy from './legacy.mjs';
 
 declare global {
 	type LegacyListeners<This extends EventTarget = HTMLElement> = {

@@ -1,4 +1,6 @@
 import * as Legacy from './legacy.mjs';
+import * as Legacy_1 from './legacy.mjs';
+export { Legacy_1 as Legacy };
 /** Modify element regarding custom options. */
 export function Modify($element, options) {
     if (options.id)
