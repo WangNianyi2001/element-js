@@ -1,4 +1,3 @@
-export * as Legacy from './legacy.mjs';
 declare global {
     type LegacyListeners<This extends EventTarget = HTMLElement> = {
         [type in keyof HTMLElementEventMap as string]: (this: This, ev: HTMLElementEventMap[type]) => void;

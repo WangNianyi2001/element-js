@@ -1,6 +1,3 @@
-import * as Legacy from './legacy.mjs';
-export * as Legacy from './legacy.mjs';
-
 declare global {
 	type LegacyListeners<This extends EventTarget = HTMLElement> = {
 		[type in keyof HTMLElementEventMap as string]: (this: This, ev: HTMLElementEventMap[type]) => void;
@@ -66,11 +63,11 @@ export function Modify<Type extends HTMLElement>(
 	}
 	if(options.on) {
 		for(const type in options.on)
-			Legacy.addEventListener.call($element, type, options.on[type]);
+			$element.addEventListener(type, options.on[type]);
 	}
 	if(options.once) {
 		for(const type in options.once)
-			Legacy.addEventListener.call($element, type, options.once[type], { once: true });
+			$element.addEventListener(type, options.once[type], { once: true });
 	}
 	if(options.styles) {
 		for(const [property, value] of Object.entries(options.styles))
